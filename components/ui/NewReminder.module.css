@@ -1,0 +1,14 @@
+.newreminder {
+    display: flex;
+}
+
+.newreminder h2 {
+    margin-top: 0;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.actionsimage {
+    width: 32px;
+    height: 32px;
+}

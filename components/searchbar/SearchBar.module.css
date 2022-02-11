@@ -1,0 +1,11 @@
+.input {
+
+}
+
+.input input {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    width: 100%;
+    color: white;
+}

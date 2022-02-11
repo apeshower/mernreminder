@@ -1,0 +1,38 @@
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #9b9b9b;
+    position: relative;
+    transition: 0.2s all ease-in;
+    cursor: pointer;
+}
+
+.circle::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    opacity: 0;
+    border: 1px solid rgb(255, 158, 13);
+    transform: translate(-50%,-50%);
+    transition: 0.2s all ease-in;
+}
+
+.circle.active {
+    border-color: rgb(255, 158, 13);
+    background-color: rgb(255, 158, 13);
+}
+
+.circle.active::after {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+.content {
+    width: 90%;
+}

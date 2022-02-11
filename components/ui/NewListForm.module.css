@@ -1,0 +1,69 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.btncancel {
+    color: #3170FF;
+    background: none;
+    border: none;
+    height: fit-content;
+    align-self: flex-start;
+    margin: auto 0;
+}
+
+.btnadd {
+    color: #3170FF;
+    background: none;
+    border: none;
+    height: fit-content;
+    align-self: flex-start;
+    margin: auto 0;
+}
+
+.main {
+    transition: 0.5s all ease-in;
+    /* transform: translateX(-120%); */
+    margin-bottom: 10rem;
+}
+
+.titleform {
+    background-color: #3a3a3a;
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+.inputtitle {
+    width: 100%;
+    background:none;
+    border: none;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px #636262;
+    background-color: #636262;
+    border-radius: 10px;
+    padding-top: 0.5rem;
+    color: white;
+    text-align: center;
+}
+
+.inputnote {
+    width: 100%;
+    background:none;
+    border: none;
+    padding-top: 0.5rem;
+    color: white;
+}
+
+.detailform {
+    background-color: #3a3a3a;
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailform h2 {
+    font-weight: 400;
+}

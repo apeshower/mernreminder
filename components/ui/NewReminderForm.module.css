@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.btncancel {
+    color: #3170FF;
+    background: none;
+    border: none;
+    height: fit-content;
+    align-self: flex-start;
+    margin: auto 0;
+}
+
+.btnadd {
+    color: #3170FF;
+    background: none;
+    border: none;
+    height: fit-content;
+    align-self: flex-start;
+    margin: auto 0;
+}
+
+.main {
+    transition: 0.3s all ease-in;
+    /* transform: translateX(-120%); */
+    margin-bottom: 10rem;
+}
+
+.main.open {
+    transform: translateX(-120%);
+}
+
+.secondary {
+    transition: 0.5s all ease-in;
+    /* transform: translateX(-120%); */
+    margin-bottom: 0rem;
+}
+
+.titleform {
+    background-color: #3a3a3a;
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+.rightcontainer {
+    transition: 0.3s all ease-in-out;
+    position: absolute;
+    top: 0;
+    right:-120%;
+    width: 100%;
+    
+}
+
+.rightcontainer.open {
+    right: 0;
+}
+
+.listcontainer {
+    transition: 0.3s all ease-in-out;
+    position: absolute;
+    top: 0;
+    right:-120%;
+    width: 100%;
+    
+}
+
+.listcontainer.open {
+    right: 0;
+}
+
+.inputtitle {
+    width: 100%;
+    background:none;
+    border: none;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px #636262;
+    color: white;
+}
+
+.inputnote {
+    width: 100%;
+    background:none;
+    border: none;
+    padding-top: 0.5rem;
+    color: white;
+}
+
+.detailform {
+    background-color: #3a3a3a;
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailform h2 {
+    font-weight: 400;
+}
+
+.datepicker {
+    background-color: #3a3a3a;
+    padding: 0.5rem 1rem;
+}
