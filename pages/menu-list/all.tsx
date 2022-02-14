@@ -37,21 +37,33 @@ const MenuDetailPage = () => {
     }
 
     const getDateTime = (date: any, time: any) => {
-        if(date === undefined) {
+        const getDate = new Date(date)
+        const getTime = new Date(time)
+
+        if (getDate.toString() === 'Invalid Date' && getTime.toString() === 'Invalid Date') {
             const dateTime = ''
             return dateTime
-        } else if (time === undefined) {
-            const dateTime = ''
+        } else if (getDate.toString() === 'Invalid Date') {
+            
+            const getTime = new Date(time)
+            const formatTime = moment(getTime).format('LT')
+            const dateTime = formatTime
             return dateTime
-        }
-         else {
+        } else if (getTime.toString() === 'Invalid Date') {
+            const formatDate = moment(getDate).format('MMMM Do YYYY')
+            const getTime = ''
+            const dateTime = formatDate
+            return dateTime
+        } else {
 
             const getDate = new Date(date)
             const formatDate = moment(getDate).format('MMMM Do YYYY')
             const getTime = new Date(time)
             const formatTime = moment(getTime).format('LT')
             const dateTime = formatDate + " " + formatTime
+            console.log('this is date ', getDate, 'this is time ', getTime)
             return dateTime
+            
         }
         
     }
