@@ -1,6 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 
-const baseUrl: string = "https://reminderdb.herokuapp.com/"
+const baseUrl: string = "https://reminderdb.herokuapp.com"
 
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
     try {
