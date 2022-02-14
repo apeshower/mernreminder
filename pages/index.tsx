@@ -170,9 +170,11 @@ const Home: NextPage = (props: any) => {
         <h1 className={styles.title} style={{marginBottom: '2rem'}}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <div className={styles.grid}>
         <SearchBar
           data={todos}
         />
+        </div>
         <div className={styles.grid}>
           <MainMenu 
             title='Today'
