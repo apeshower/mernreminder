@@ -37,6 +37,38 @@ const CheckListItem = ( props: any) => {
         )
         //setRemove(true)
     }
+    
+    const getDateTime = (date: any, time: any) => {
+        const getDate = new Date(date)
+        const getTime = new Date(time)
+
+        if (getDate.toString() === 'Invalid Date' && getTime.toString() === 'Invalid Date') {
+            const dateTime = ''
+            return dateTime
+        } else if (getDate.toString() === 'Invalid Date') {
+            
+            const getTime = new Date(time)
+            const formatTime = moment(getTime).format('LT')
+            const dateTime = formatTime
+            return dateTime
+        } else if (getTime.toString() === 'Invalid Date') {
+            const formatDate = moment(getDate).format('MMMM Do YYYY')
+            const getTime = ''
+            const dateTime = formatDate
+            return dateTime
+        } else {
+
+            const getDate = new Date(date)
+            const formatDate = moment(getDate).format('MMMM Do YYYY')
+            const getTime = new Date(time)
+            const formatTime = moment(getTime).format('LT')
+            const dateTime = formatDate + " " + formatTime
+            console.log('this is date ', getDate, 'this is time ', getTime)
+            return dateTime
+            
+        }
+        
+    }
 
     // const fetchDataHandler = (id: any) => {
     //     const response = fetch('https://fir-reminder-c5fd2-default-rtdb.firebaseio.com/test/-Mu6C9s3x41nIzNCW4Aa/checklist.json', {
@@ -53,7 +85,7 @@ const CheckListItem = ( props: any) => {
                         <h2 className='my-auto'>{props.title}</h2>
                         <div>
                             <h3>{props.description}</h3>
-                            {props.datePicked !== " " || props.timePicked !== " " ? <p>{setTime}</p> : <div></div>}
+                            {props.datePicked !== " " || props.timePicked !== " " ? <p>{getDateTime(props.datePicked, props.timePicked)}</p> : <div></div>}
                         </div>
                     </div>
                 </div>
