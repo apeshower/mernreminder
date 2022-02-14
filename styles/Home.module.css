@@ -31,6 +31,8 @@
 .reminder {
   width: 100%;
   width: 800px;
+
+  
 }
 
 .title a {
@@ -76,6 +78,8 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 800px;
+
+
 }
 
 .card {
@@ -113,9 +117,16 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 816px) {
   .grid {
     width: 100%;
+    display: block;
     flex-direction: column;
   }
+
+  .reminder {
+    width: 100%;
+  }
 }
+
+

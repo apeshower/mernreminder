@@ -7,7 +7,7 @@ import classes from './Modal.module.css'
 // overflow: hidden;
 const Modal = (props:any) => {
     return (
-        <div className={`${classes.modal} fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 mx-auto overflow-hidden`}>
+        <div className={`${classes.modal} w-[100%] sm:w-fit fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 mx-auto overflow-hidden`}>
             <Card>
                 {props.children}
             </Card>

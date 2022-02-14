@@ -29,7 +29,7 @@ const ReminderItem = (props: any) => {
                     color={props.color}
                     imagepath={Icon}
                 />
-                <div className='flex ml-6 justify-between w-[86%]'>
+                <div className='flex ml-6 justify-between grow'>
                     <h3 className='font-normal my-auto'>{props.title}</h3>
                     {!checklistAmount ? 
                     <h3 className='font-normal my-auto'>0</h3>:

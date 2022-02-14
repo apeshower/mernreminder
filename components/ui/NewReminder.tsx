@@ -9,7 +9,7 @@ const NewReminder = (props:any) => {
     //     props.onAddReminderHandler(true)
     // }
     return (
-        <div className='flex cursor-pointer' onClick={props.onAddReminderHandler}>
+        <div className='flex cursor-pointer mb-[3rem]' onClick={props.onAddReminderHandler}>
             <div className='w-[32px] h-[32px]' >
                 <Image
                     src={props.imagepath}

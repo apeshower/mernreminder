@@ -180,6 +180,7 @@ const Home: NextPage = (props: any) => {
             color='#0c68c7' 
             imagepath={DateCal} 
             boxwidth='50%'
+            boxsize='small'
             totalAmount={getTodayTodoCount(todos)}
           />
           <MainMenu 
@@ -188,6 +189,7 @@ const Home: NextPage = (props: any) => {
             color='#ff0000' 
             imagepath={Icon} 
             boxwidth='50%'
+            boxsize='small'
             totalAmount={getScheduledTodoCount(todos)}
           />
           <MainMenu 
@@ -196,6 +198,7 @@ const Home: NextPage = (props: any) => {
             color='#6c6b6b' 
             imagepath={Icon} 
             boxwidth='100%'
+            boxsize='large'
             totalAmount={todos.length}
           />
         </div>

@@ -52,7 +52,7 @@ const NewCheckListItem = (props: any) => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex mb-4'>
                     <div className={`${classes.circle}`}></div>
-                    <div className={`${classes.content} border-solid border-[#5e5e5e] border-b py-2 ml-8`}>
+                    <div className={`grow border-solid border-[#5e5e5e] border-b py-2 ml-8`}>
                         <input {...register("title")} className={`bg-transparent border-none w-full`} placeholder='Title'/>
                         <div className='mt-1 pt-1 border-t border-[#5e5e5e]'>
                             <input {...register("description")} className={`bg-transparent border-none w-full`} placeholder='Description'/>

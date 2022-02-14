@@ -26,6 +26,15 @@
     transition: 0.5s all ease-in;
     /* transform: translateX(-120%); */
     margin-bottom: 10rem;
+
+   
+}
+
+@media (max-width : 640px) {
+    .main {
+        margin-bottom: 2rem;
+    }
+    
 }
 
 .titleform {

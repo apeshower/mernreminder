@@ -11,9 +11,9 @@ const SearchBar = (props: any) => {
     const [showSearch, setShowSearch] = useState(false)
 
     return (
-        <div className="relative">
-            <div className='flex w-[800px] p-4 mb-8 bg-[#242424] rounded-[25px]'>
-                <div className='w-[32px] mr-4'>
+        <div className="relative md:w-[100%] lg:w-fit">
+            <div className='flex md:w-[100%] xl:w-[800px] p-4 mb-8 bg-[#242424] rounded-[25px] mx-2 sm:mx-0'>
+                <div className='w-[32px] mr-4 my-auto'>
                     <Image
                         src={Search}
                         alt='search'

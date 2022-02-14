@@ -49,7 +49,7 @@ const CheckListItem = ( props: any) => {
             {!remove && 
                 <div className='flex mb-4'>
                     <div className={clicked ? `${classes.circle} ${classes.active}` : `${classes.circle}`} onClick={checkToggleHandler}></div>
-                    <div className={`${classes.content} border-solid border-[#5e5e5e] border-b  pb-4 ml-8`}>
+                    <div className={`grow border-solid border-[#5e5e5e] border-b  pb-4 ml-8`}>
                         <h2 className='my-auto'>{props.title}</h2>
                         <div>
                             <h3>{props.description}</h3>
