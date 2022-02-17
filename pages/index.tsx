@@ -59,7 +59,7 @@ const Home: NextPage = (props: any) => {
       .catch(err => console.log(err))
   }
 
-  const handleSaveList = (event: React.FormEvent, formData: IList): void => {
+  const handleSaveList = (event: any, formData: IList): void => {
     addList(formData)
     .then(({ status, data }) => {
      if (status !== 201) {
