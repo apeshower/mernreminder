@@ -8,6 +8,7 @@ import Link from "next/link";
 import NewReminderForm from "../ui/NewReminderForm";
 import { useEffect, useState } from "react";
 import { set } from "@firebase/database";
+import Spinner from "../ui/Spinner";
 
 const onAddReminderHandler = (props: any) => {
    // props.onAddRemindHandler();
@@ -24,10 +25,18 @@ const ReminderList = (props:any) => {
         props.onAddListHandler(true)
     }
 
+    const [isLoading, setIsLoading] = useState(true);
+
     return (
         <div>
             <h1 className='ml-8 mt-2 mb-4'>My List</h1>
             <Card>
+                {props.isLoading && 
+                <Spinner
+                    size='3rem'
+                    margin= '0 auto'
+                />
+                }
                 {props.alldata.map((item: any) => {
                     return (
                         <ReminderItem 
@@ -36,6 +45,7 @@ const ReminderList = (props:any) => {
                             id={item._id}
                             color={item.color}
                             totalTodosCount={item.totalTodosCount}
+                            isLoading={props.isLoading}
                         />
                     )
                 })}

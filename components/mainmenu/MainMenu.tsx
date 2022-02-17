@@ -6,6 +6,7 @@ import IconBox from "../ui/IconBox";
 import Number from "../number/Number";
 import MenuTitle from "./MenuTitle";
 import Link from "next/link";
+import Spinner from "../ui/Spinner";
 
 const MainMenu = (props: any) => {
     return (
@@ -23,9 +24,16 @@ const MainMenu = (props: any) => {
                             />
                         </div>
                         <div>
+                            { props.isLoading ?
+                                <Spinner 
+                                    size='1rem'
+                                    margin='auto 0'
+                                /> :
                             <Number
                                 number={props.totalAmount}
                             />
+                            }
+
                         </div>   
                     </div>         
                 </Card>

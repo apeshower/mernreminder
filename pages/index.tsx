@@ -16,29 +16,26 @@ import NewListForm from '../components/ui/NewListForm'
 import { getTodos, addTodo, updateTodo, deleteTodo, getLists, addList, updateList, deleteList, getAllData } from '../pages/api/API'
 import Todo from '../components/TodoItem';
 import moment from 'moment';
+import Spinner from '../components/ui/Spinner';
 
 
 const Home: NextPage = (props: any) => {
 
   const [showModal, setShowModal] = useState(false);
   const [showNewList, setShowNewList] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [lists, setLists] = useState<IList[]>([]);
   const [todos, setTodos] = useState<ITodo[]>([]);
   const [allData, setAllData] = useState([]);
 
   const fetchAllData = async() => {
-    // getAllData()
-    // .then(({ data: { allData } }: {}) => setAllData(allData))
-    // .catch((err: Error) => console.log(err))
     const response = await getAllData()
     const data: any = await response.data.lists
     setAllData(data)
-    //console.log('All Data Response ',allData)
+    setIsLoading(false)
   }
 
   const momentTimeStamp = moment(new Date()).format('x')
-
-  console.log('This is all the mother fucker data ', allData)
 
   const fetchLists = (): void => {
     getLists()
@@ -69,7 +66,7 @@ const Home: NextPage = (props: any) => {
        alert ('Error! Todo not saved')
      }
      setLists(data.lists)
-     //console.log(data.lists)
+     console.log('list saved')
    })
    .catch((err) => console.log(err))
   }
@@ -86,7 +83,6 @@ const Home: NextPage = (props: any) => {
   }
 
   const TodayDate = moment(new Date()).format('MMMM Do YYYY')
-    console.log(TodayDate)
 
     const getTodayTodoCount = (todo: any) => {
         const getData: any = todo
@@ -95,30 +91,19 @@ const Home: NextPage = (props: any) => {
     }
     const getScheduledTodoCount = (todo: any) => {
       const getData = todo
-      //console.log('GetData TimeStamp',moment(getData.datePicked).format('x'))
+      
       const result = getData.filter((getData: any) => moment(new Date(getData.datePicked)).format('x') > momentTimeStamp)
       return result.length
   }
 
-  // const handleSaveTodo = (event: React.FormEvent, formData: ITodo): void => {
-  //   addTodo(formData)
-  //   .then(({ status, data }) => {
-  //    if (status !== 201) {
-  //      alert ('Error! Todo not saved')
-  //    }
-  //    setTodos(data.todos)
-  //    console.log('todos data', data.todos)
-  //  })
-  //  .catch((err) => console.log(err))
-  // }
-
-  async function handleSaveTodo(event: React.FormEvent, formData: ITodo) {
+  const handleSaveTodo = async (event: React.FormEvent, formData: ITodo) => {
     try {
-      console.log('adding to do with form data', formData);
       await addTodo(formData);
-      fetchLists();
+      setShowModal(false);
+      // fetchLists();
+      fetchAllData();
     } catch (e) {
-      console.log("Something is wrong while adding to do", e);
+      //console.log("Something is wrong while adding to do", e);
     }
   }
 
@@ -140,9 +125,11 @@ const Home: NextPage = (props: any) => {
 
   const getTotalChecklistHandler = (childComp: any) => {
     getTotalChecklistHandler(childComp);
-    //console.log(childComp);
   }
   useEffect(() => {
+
+    console.log('showModal useEffect', showModal);
+
     fetchLists()
     fetchTodos()
     fetchAllData()
@@ -168,7 +155,7 @@ const Home: NextPage = (props: any) => {
       />}
       <main className={styles.main}>
         <h1 className={styles.title} style={{marginBottom: '2rem'}}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          This is a wonderful Reminder
         </h1>
         <div className={styles.grid}>
         <SearchBar
@@ -184,6 +171,7 @@ const Home: NextPage = (props: any) => {
             boxwidth='50%'
             boxsize='small'
             totalAmount={getTodayTodoCount(todos)}
+            isLoading={isLoading}
           />
           <MainMenu 
             title='Scheduled' 
@@ -193,6 +181,7 @@ const Home: NextPage = (props: any) => {
             boxwidth='50%'
             boxsize='small'
             totalAmount={getScheduledTodoCount(todos)}
+            isLoading={isLoading}
           />
           <MainMenu 
             title='All' 
@@ -202,6 +191,7 @@ const Home: NextPage = (props: any) => {
             boxwidth='100%'
             boxsize='large'
             totalAmount={todos.length}
+            isLoading={isLoading}
           />
         </div>
         <div className={styles.reminder}>
@@ -209,7 +199,8 @@ const Home: NextPage = (props: any) => {
             onAddReminderHandler={onAddReminderHandler}
             onAddListHandler={onAddListHandler}
             getTotalChecklistHandler={getTotalChecklistHandler}
-            data={lists}
+            //data={lists}
+            isLoading={isLoading}
             alldata={allData}
           />
         </div>
