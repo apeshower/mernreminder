@@ -168,7 +168,7 @@ const Home: NextPage = (props: any) => {
       />}
       <main className={styles.main}>
         <h1 className={styles.title} style={{marginBottom: '2rem'}}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to this Wonderful Reminder
         </h1>
         <div className={styles.grid}>
         <SearchBar
