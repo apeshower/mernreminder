@@ -10,7 +10,7 @@ import Link from "next/link";
 const MainMenu = (props: any) => {
     return (
         <Link href={`/menu-list/${props.id}`} passHref>
-            <div style={{marginBottom: '1rem'}} className={`${props.boxsize === 'small' ? "sm:w-[100%] lg:w-[50%]" : "sm:w-[100%] lg:w-[100%]"}`}>
+            <div style={{marginBottom: '1rem'}} className={`${props.boxsize === 'small' ? "sm:w-[100%] lg:w-[50%] mx-3" : "sm:w-[100%] lg:w-[100%] mx-3"}`}>
                 <Card>
                     <div className='inline-flex w-full justify-between'>
                         <div>
